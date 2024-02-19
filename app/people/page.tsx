@@ -23,7 +23,6 @@ export default function PeoplePage() {
     }
 
     try {
-      // Save the list of people directly under "people" collection
       const peopleCollectionRef = collection(firestore, "people");
       for (const person of people) {
         await addDoc(peopleCollectionRef, person);

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth, firestore } from "../util/firebase"; // Assuming you've initialized Firestore
+import { auth, firestore } from "../util/firebase";
 import Link from "next/link";
 import { setDoc, doc } from "firebase/firestore";
 
@@ -16,8 +16,6 @@ const SignUp = () => {
     try {
       const res = await createUserWithEmailAndPassword(email, password);
       console.log({ res });
-
-      // Save user details to Firestore
       await setDoc(doc(firestore, "users", email), {
         name: name,
         email: email,

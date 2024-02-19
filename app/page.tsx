@@ -30,7 +30,7 @@ export default function Home() {
           if (userDocSnap.exists()) {
             const userData = userDocSnap.data();
             setUserName(userData.name);
-            setUserType(userData.type || "Viewer"); // Default to Viewer if type is not available
+            setUserType(userData.type || "Viewer");
           }
         } catch (error) {
           console.error("Error getting user data:", error);
